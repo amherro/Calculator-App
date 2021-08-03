@@ -1,5 +1,6 @@
-const number = document.querySelector('.num')
-const numberBtns = document.querySelectorAll('[data-number]')
+const currentOperandText = document.querySelector('[data-current-operand]');
+const previousOperandText = document.querySelector('[data-previous-operand]')
+const numberBtns = document.querySelectorAll('[data-number]');
 const clear = document.querySelector('[data-clear]');
 const operations = document.querySelectorAll('[data-operation]');
 const deleteBtn = document.querySelector('[data-delete]');
@@ -7,11 +8,10 @@ const equals = document.querySelector('[data-equals]');
 
 
 //Display value of button in display section
-let firstOperand = numberBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-        number.textContent += btn.textContent
-        return number.textContent;
-        
+numberBtns.forEach((number) => {
+    number.addEventListener('click', () => {
+        currentOperandText.textContent += number.textContent
+        return currentOperandText;
     })
 })
 
@@ -31,21 +31,8 @@ const divide = (a, b) => {
 
 //Clear Function
 clear.addEventListener('click', () => {
-    number.textContent = '';
+    currentOperandText.textContent = '';
 })
-
-
-//Add button
-addition.addEventListener('click', add)
-
-//Subtract button
-subtraction.addEventListener('click', subtract);
-
-//Multiply button
-multiplication.addEventListener('click', multiply);
-
-//Division button 
-division.addEventListener('click', divide);
 
 
 
@@ -66,4 +53,3 @@ const operate = (opr, num1, num2) => {
         return divide(num1, num2)
     }
 }
-operate(firstOperand, secondOperand)
