@@ -14,25 +14,29 @@
     <div class="calcBorder">
         <div class="calculator">
             <div class="display">
-                <div class="num">8654091021</div>
+                <div class="previousOperandText"></div>
+                <div class="currentOperandText"></div>
             </div>
             <div class="calcButtons">
-                <button class="clear">Clear</button>
-                <button class="delete">Delete</button>
-                <button class="add">+</button>
-                <button class="subtract">-</button>
-                <button class="multiply">*</button>
-                <button class="divide">/</button>
-                <button class="equals">=</button>
-                <button class="topRow">7</button>
-                <button class="topRow">8</button>
-                <button class="topRow">9</button>
-                <button class="middleRow">4</button>
-                <button class="middleRow">5</button>
-                <button class="middleRow">6</button>
-                <button class="bottomRow">1</button>
-                <button class="bottomRow">2</button>
-                <button class="bottomRow">3</button>
+                <button data-clear class="topRow clear">AC</button>
+                <button data-delete class="topRow">Delete</button>
+                <button data-operation class="topRow">+</button>
+                <button data-operation class="topRow">-</button>
+                <button data-number class="secondRow">7</button>
+                <button data-number class="secondRow">8</button>
+                <button data-number class="secondRow">9</button>
+                <button data-operation class="secondRow">*</button>
+                <button data-number class="thirdRow">4</button>
+                <button data-number class="thirdRow">5</button>
+                <button data-number class="thirdRow">6</button>
+                <button data-operation class="thirdRow">/</button>
+                <button data-number class="fourthRow">1</button>
+                <button data-number class="fourthRow">2</button>
+                <button data-number class="fourthRow">3</button>
+                <button data-equals class="fourthRow">=</button>
+                <button data-number class="bottomRow zero">0</button>
+                <button data-equals class="bottomRow negative">+/-</button>
+                <button data-number class="bottomRow decimal">.</button>
             </div>
         </div>
     </div>

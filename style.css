@@ -22,6 +22,7 @@
 }
 .num {
     padding-top: 40px;
+    padding-right: 10px;
 }
 .display {
     background-color: salmon;
@@ -36,41 +37,6 @@
     grid-column: 2;
     height: 400px;
 }
-.clear {
-    grid-column: 1;
-    grid-row: 1;
-}
-.delete  {
-    grid-row: 1;
-    grid-column: 2;
-}
-.add {
-    grid-column: 3;
-    grid-row: 1;
-}
-.subtract {
-    grid-column: 4;
-    grid-row: 1;
-}
-.multiply {
-    grid-column: 4;
-    grid-row: 2;
-}
-.divide {
-    grid-column: 4;
-    grid-row: 3;
-}
-.equals {
-    grid-column: 4;
-    grid-row: 4;
-}
-
-.bottomRow {
-    grid-row: 4;
-}
-.middleRow {
-    grid-row: 3;
-}
-.topRow {
-    grid-row: 2;
+.decimal {
+    grid-column:  4;
 }
