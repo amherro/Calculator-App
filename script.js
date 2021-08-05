@@ -1,4 +1,6 @@
-//Need to figure out how to display second input and make compute function work 
+//Need to figure out how to make compute function work 
+let currentOperand = '';
+let previousOperand = '';
 
 let currentOperandText = document.querySelector('[data-current-operand]');
 let currentOperation = document.querySelector('[data-current-operation]')
@@ -20,8 +22,9 @@ numberBtns.forEach((number) => {
 //Display Operation on Calculator
 operations.forEach((opr) => {
     opr.addEventListener('click', () => {
+        previousOperand = currentOperandText.textContent;
         currentOperation = opr.textContent; 
-        previousOperandText.textContent = `${currentOperandText.textContent} ${currentOperation}`
+        previousOperandText.textContent = `${previousOperand} ${currentOperation}`
         currentOperandText.textContent = '';       
     })            
 })
@@ -36,16 +39,7 @@ clear.addEventListener('click', () => {
 
 
 
-equals.addEventListener('click', () => {
-    
-});
-
-function compute() {
-    let previousOperand = previousOperandText.textContent;
-    let currentOperand = operate(currentOperation, c); 
-
-}
-
+equals.addEventListener('click', compute);
 
 //Operation Functions
 const add = (a, b) => {
@@ -64,17 +58,22 @@ const divide = (a, b) => {
 
 //Operate function
 const operate = (opr, num1, num2) => {
-    num1 = previousOperandText;
-    num2 = currentOperandText
-    if (this.opr === '+') {
+    num1 = parseInt(previousOperandText.textContent);
+    num2 = parseInt(currentOperandText.textContent);
+    if (opr == '+') {
         return add(num1, num2)
-    } else if (opr === '-') {
+    } else if (opr == '-') {
         return subtract(num1, num2)
-    } else if (opr === '*') {
+    } else if (opr == '*') {
         return multiply(num1, num2) 
-    } else if (opr === '/') {
+    } else if (opr == '/') {
         return divide(num1, num2)
     }
 }
 
-
+function compute() {
+    currentOperand = currentOperandText.textContent
+    currentOperandText.textContent = operate(currentOperation, currentOperand, previousOperand); 
+    previousOperandText.textContent = `${previousOperand} ${currentOperation} ${currentOperand} =`
+    
+}
