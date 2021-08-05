@@ -9,10 +9,7 @@ const operations = document.querySelectorAll('[data-operation]');
 const deleteBtn = document.querySelector('[data-delete]');
 const equals = document.querySelector('[data-equals]');
 
-let updateDisplay = () => {
-    previousOperandText.textContent  = currentOperandText.textContent
-    
-}
+
 //Display value of button in display section
 numberBtns.forEach((number) => {
     number.addEventListener('click', () => {
@@ -23,8 +20,8 @@ numberBtns.forEach((number) => {
 //Display Operation on Calculator
 operations.forEach((opr) => {
     opr.addEventListener('click', () => {
-        updateDisplay();
-        currentOperation.textContent = opr.textContent; 
+        currentOperation = opr.textContent; 
+        previousOperandText.textContent = `${currentOperandText.textContent} ${currentOperation}`
         currentOperandText.textContent = '';       
     })            
 })
@@ -37,23 +34,19 @@ clear.addEventListener('click', () => {
     previousOperandText.textContent = '';
 })
 
-function compute() {
-    if (this.currentOperation === '+') {
-        return previousOperandText - currentOperandText;
-    } else if (this.currentOperation === '-') {
-        return previousOperandText - currentOperandText;
-    } else if (this.currentOperation === '*') {
-        return previousOperandText - currentOperandText;
-    } else if (this.currentOperation === '/') {
-        return previousOperandText - currentOperandText;
-    };
-}
+
 
 equals.addEventListener('click', () => {
-    compute();
+    
 });
 
-/*
+function compute() {
+    let previousOperand = previousOperandText.textContent;
+    let currentOperand = operate(currentOperation, c); 
+
+}
+
+
 //Operation Functions
 const add = (a, b) => {
     return a + b;
@@ -71,8 +64,10 @@ const divide = (a, b) => {
 
 //Operate function
 const operate = (opr, num1, num2) => {
+    num1 = previousOperandText;
+    num2 = currentOperandText
     if (this.opr === '+') {
-        currentOperandText.textContent = add(num1, num2)
+        return add(num1, num2)
     } else if (opr === '-') {
         return subtract(num1, num2)
     } else if (opr === '*') {
@@ -82,5 +77,4 @@ const operate = (opr, num1, num2) => {
     }
 }
 
-operate(currentOperation, previousOperandText, currentOperandText);
-*/
+
