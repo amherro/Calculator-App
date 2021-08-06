@@ -1,0 +1,1 @@
+This project is a responsive, mobile calculator built entirely with HTML, CSS, and vanilla JavaScript. It definitely challenged my JavaScript skills, but in the end it was a great learning experience that has solidified my userstanding of the material I have been learning. 

@@ -1,4 +1,3 @@
-//Need to figure out how to make compute function work 
 let currentOperand = '';
 let previousOperand = '';
 
@@ -10,6 +9,9 @@ const clear = document.querySelector('[data-clear]');
 const operations = document.querySelectorAll('[data-operation]');
 const deleteBtn = document.querySelector('[data-delete]');
 const equals = document.querySelector('[data-equals]');
+const negativeBtn = document.querySelector('[data-negative]')
+const decimalBtn = document.querySelector('[data-decimal]')
+const sqrRootBtn = document.querySelector('[data-sqrRoot]')
 
 
 //Display value of button in display section
@@ -29,7 +31,6 @@ operations.forEach((opr) => {
     })            
 })
 
-
 //Clear Function 
 clear.addEventListener('click', () => {
     currentOperandText.textContent = '';
@@ -37,8 +38,35 @@ clear.addEventListener('click', () => {
     previousOperandText.textContent = '';
 })
 
+//Delete Function
+deleteBtn.addEventListener('click', () => {
+    let deleteArr = Array.from(currentOperandText.textContent);
+    deleteArr.pop();
+    currentOperandText.textContent = deleteArr.join('');
+})
 
+//Positive/Negative Button Function 
+negativeBtn.addEventListener('click', () => {
+    if (currentOperandText.textContent != '') {
+        currentOperandText.textContent *= -1
+    } else {
+        return
+    }
+})
+//Limit to only one decimal 
+decimalBtn.addEventListener('click', () => {
+    if (!currentOperandText.textContent.includes('.')) {
+        currentOperandText.textContent += '.' 
+    }
+})
 
+//Square Root Function 
+sqrRootBtn.addEventListener('click', () => {
+        currentOperandText.textContent = Math.sqrt(parseFloat(currentOperandText.textContent))
+    }
+)
+
+//Functionality for Equals Button 
 equals.addEventListener('click', compute);
 
 //Operation Functions
@@ -55,11 +83,10 @@ const divide = (a, b) => {
     return a / b;
 }
 
-
 //Operate function
 const operate = (opr, num1, num2) => {
-    num1 = parseInt(previousOperandText.textContent);
-    num2 = parseInt(currentOperandText.textContent);
+    num1 = parseFloat(previousOperandText.textContent);
+    num2 = parseFloat(currentOperandText.textContent);
     if (opr == '+') {
         return add(num1, num2)
     } else if (opr == '-') {
@@ -68,6 +95,8 @@ const operate = (opr, num1, num2) => {
         return multiply(num1, num2) 
     } else if (opr == '/') {
         return divide(num1, num2)
+    } else if (opr == '√') {
+        return sqrRoot(num2)
     }
 }
 
