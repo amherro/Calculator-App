@@ -95,8 +95,6 @@ const operate = (opr, num1, num2) => {
         return multiply(num1, num2) 
     } else if (opr == '/') {
         return divide(num1, num2)
-    } else if (opr == '√') {
-        return sqrRoot(num2)
     }
 }
 
