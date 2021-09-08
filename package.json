@@ -1,0 +1,22 @@
+{
+  "name": "calculator-app",
+  "version": "1.0.0",
+  "description": "A responsive, mobile calculator built entirely with HTML, CSS, and vanilla JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amherro/Calculator-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amherro/Calculator-App/issues"
+  },
+  "homepage": "https://amherro.github.io/Calculator-App/",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
