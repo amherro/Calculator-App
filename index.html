@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="pageContent">
+        <div class="heading">
+            <h1>Mobile Calculator</h1>
+        </div>
+        <div class="calcBorder">
+            <div class="calculator">
+                <div class="display">
+                    <div data-previous-operand class="previousOperandText"></div>
+                    <div data-current-operation class="currentOperation"></div>
+                    <div data-current-operand class="currentOperandText"></div>
+                </div>
+                <div class="calcButtons">
+                    <button data-clear class="topRow clearDelete">AC</button>
+                    <button data-delete class="topRow clearDelete">C</button>
+                    <button data-operation class="topRow operation">+</button>
+                    <button data-operation class="topRow operation">-</button>
+                    <button data-number class="secondRow number">7</button>
+                    <button data-number class="secondRow number">8</button>
+                    <button data-number class="secondRow number">9</button>
+                    <button data-operation class="secondRow operation">*</button>
+                    <button data-number class="thirdRow number">4</button>
+                    <button data-number class="thirdRow number">5</button>
+                    <button data-number class="thirdRow number">6</button>
+                    <button data-operation class="thirdRow operation">/</button>
+                    <button data-number class="fourthRow number">1</button>
+                    <button data-number class="fourthRow number">2</button>
+                    <button data-number class="fourthRow number">3</button>
+                    <button data-equals class="fourthRow equals">=</button>
+                    <button data-number class="bottomRow zero number">0</button>
+                    <button data-negative class="bottomRow negative number">+/-</button>
+                    <button data-sqrRoot class="bottomRow sqrRoot number">√</button>
+                    <button data-decimal class="bottomRow decimal number">.</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="script.js"></script>
+</html>
